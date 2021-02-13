@@ -14,21 +14,23 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-//file location C:\Users\HP\Downloads\a_example
-// C:\Users\HP\Downloads\b_little_bit_of_everything.in
-// C:\Users\HP\Downloads\e_many_teams.in
-// C:\Users\HP\Downloads\c_many_ingredients.in
-// C:\Users\HP\Downloads\d_many_pizzas.in
+//file location C:\Users\HP\Desktop\HashCode\input\a_example
+// C:\Users\HP\Desktop\HashCode\input\b_little_bit_of_everything.in
+// C:\Users\HP\Desktop\HashCode\input\e_many_teams.in
+// C:\Users\HP\Desktop\HashCode\input\c_many_ingredients.in
+// C:\Users\HP\Desktop\HashCode\input\d_many_pizzas.in
 
 public class ImaginaryPizzaria {
 	public static void main(String[] args) throws IOException {
 		double pizzaScore = 0;
 		int teamNumber;
 		Scanner in = new Scanner(System.in);
+		System.out.println("Input file location");
 		File file = new File(in.next());
 		FileReader read = new FileReader(file);
 		BufferedReader myObj = new BufferedReader(read);
-		String saveLocation = "C:\\Users\\HP\\Downloads\\e_many_teams.out";
+		System.out.println("Input location for file to write to");
+		String saveLocation = in.next();
 		FileWriter location = new FileWriter(saveLocation);
 		BufferedWriter writer = new BufferedWriter(location);
 		Map<Integer, ArrayList<String>> listMap = new TreeMap<Integer, ArrayList<String>>();
@@ -182,19 +184,22 @@ public class ImaginaryPizzaria {
 			}
 			break;
 		}
-		StringBuilder sb = new StringBuilder();
-		for (String s : deliveredPizza) {
-					    sb.append(s);
-					    sb.append(" ");
-					}
+		String ingre = String.join(" ", deliveredPizza);
+		//StringBuilder sb = new StringBuilder();
+		//for (String s : deliveredPizza) {
+					   // sb.append(s);
+					   // sb.append(" ");
+					    					    
+					//}
 					try {
-						write.write(member + " "+ sb);
+						write.write(member + " "+ ingre+"\n" );
+						
 						
 					}
 					catch (Exception e){
 						e.getStackTrace();
 					}
-		System.out.println(member + " "+ sb);
+		System.out.println(member + " "+ ingre);
 		System.out.println("Delivery score is "+ score(ingredients.size()));
 		deliveryScore += (score(ingredients.size()));;
 		return deliveryScore;
@@ -221,19 +226,22 @@ public class ImaginaryPizzaria {
 			}
 			break;
 		}
-		StringBuilder sb = new StringBuilder();
-		for (String s : deliveredPizza) {
-					    sb.append(s);
-					    sb.append(" ");
-					}
+		String ingre = String.join(" ", deliveredPizza);
+		//StringBuilder sb = new StringBuilder();
+		//for (String s : deliveredPizza) {
+					   // sb.append(s);
+					   // sb.append(" ");
+					    					    
+					//}
 					try {
-						write.write(member + " "+ sb);
+						write.write(member + " "+ ingre+"\n" );
+						
 						
 					}
 					catch (Exception e){
 						e.getStackTrace();
 					}
-		System.out.println(member + " "+ sb);
+		System.out.println(member + " "+ ingre);
 		System.out.println("Delivery score is "+ score(ingredients.size()));
 		deliveryScore += (score(ingredients.size()));;
 		return deliveryScore;
@@ -261,19 +269,22 @@ public class ImaginaryPizzaria {
 			
 			break;
 		}
-		StringBuilder sb = new StringBuilder();
-		for (String s : deliveredPizza) {
-					    sb.append(s);
-					    sb.append(" ");
-					}
+		String ingre = String.join(" ", deliveredPizza);
+		//StringBuilder sb = new StringBuilder();
+		//for (String s : deliveredPizza) {
+					   // sb.append(s);
+					   // sb.append(" ");
+					    					    
+					//}
 					try {
-						write.write(member + " "+ sb);
+						write.write(member + " "+ ingre+"\n" );
+						
 						
 					}
 					catch (Exception e){
 						e.getStackTrace();
 					}
-		System.out.println(member + " "+ sb);
+		System.out.println(member + " "+ ingre);
 		System.out.println("Delivery score is "+ score(ingredients.size()));
 		deliveryScore += (score(ingredients.size()));;
 		return deliveryScore;
@@ -288,7 +299,7 @@ public class ImaginaryPizzaria {
           
         // hashset for storing lines of delete.txt 
         ArrayList<String> hs = new ArrayList<String>();
-        hs.add(first+" ");
+        hs.add(first+"\n");
         
         // loop for each line of delete.txt 
         while(parentStringValue != null) 
